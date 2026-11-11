@@ -1,0 +1,197 @@
+"""Tests for serialized gateway lifecycle and trusted migration."""
+
+import asyncio
+from typing import Any
+
+import pytest
+
+from custom_components.orvibo_lan.auth.credentials import ProtocolDigest
+from custom_components.orvibo_lan.gateway.discovery import DiscoveryCandidate
+from custom_components.orvibo_lan.gateway.exceptions import GatewayConnectionError
+from custom_components.orvibo_lan.gateway.manager import GatewayManager
+
+PASSWORD = ProtocolDigest.from_password("password")
+
+
+class FakeConnection:
+    def __init__(
+        self,
+        host: str,
+        *,
+        fail_send: bool = False,
+        identity_confirmed: bool = True,
+    ) -> None:
+        self.host = host
+        self.connected = False
+        self.identity_confirmed = identity_confirmed
+        self.fail_send = fail_send
+        self.closed = 0
+        self.allow_missing_uid = False
+        self.push_callback = None
+
+    async def connect(
+        self,
+        username: str,
+        digest: ProtocolDigest,
+        *,
+        expected_uid: str,
+        allow_missing_uid: bool = False,
+    ) -> None:
+        assert digest == PASSWORD
+        del username, digest, expected_uid
+        self.allow_missing_uid = allow_missing_uid
+        self.connected = True
+
+    async def send(self, payload: object, *, timeout: float | None = None) -> dict[str, Any]:
+        del timeout
+        await asyncio.sleep(0)
+        if self.fail_send:
+            self.connected = False
+            raise GatewayConnectionError("failed")
+        return {"payload": payload}
+
+    async def close(self) -> None:
+        self.closed += 1
+        self.connected = False
+
+    def set_push_callback(self, callback) -> None:
+        self.push_callback = callback
+
+
+class FakeDiscovery:
+    def __init__(self, candidates: dict[str, DiscoveryCandidate]) -> None:
+        self.candidates = candidates
+
+    async def discover(self, known_uids: set[str]) -> dict[str, DiscoveryCandidate]:
+        assert known_uids == {"uid"}
+        return self.candidates
+
+
+@pytest.mark.asyncio
+async def test_send_failure_is_not_retried() -> None:
+    created: list[FakeConnection] = []
+
+    def factory(host: str) -> FakeConnection:
+        connection = FakeConnection(host, fail_send=not created)
+        created.append(connection)
+        return connection
+
+    manager = GatewayManager("user", PASSWORD, {"uid": "192.168.1.2"}, connection_factory=factory)
+    await manager.ensure("uid")
+
+    with pytest.raises(GatewayConnectionError):
+        await manager.send("uid", {"serial": 1})
+
+    assert len(created) == 1
+    assert created[0].allow_missing_uid
+    await manager.close()
+    await manager.close()
+
+
+@pytest.mark.asyncio
+async def test_unconfirmed_candidate_keeps_cloud_host() -> None:
+    connections: list[FakeConnection] = []
+
+    def factory(host: str) -> FakeConnection:
+        connection = FakeConnection(host, identity_confirmed=host != "192.168.1.20")
+        connections.append(connection)
+        return connection
+
+    manager = GatewayManager(
+        "user",
+        PASSWORD,
+        {"uid": "192.168.1.2"},
+        discovery=FakeDiscovery({"uid": DiscoveryCandidate("uid", "192.168.1.20")}),
+        connection_factory=factory,
+    )
+    await manager.discover()
+
+    assert manager.gateway_hosts["uid"] == "192.168.1.2"
+    assert connections[-1].closed >= 1
+    assert not connections[-1].allow_missing_uid
+
+
+@pytest.mark.asyncio
+async def test_confirmed_candidate_replaces_cloud_connection() -> None:
+    connections: list[FakeConnection] = []
+
+    def factory(host: str) -> FakeConnection:
+        connection = FakeConnection(host)
+        connections.append(connection)
+        return connection
+
+    manager = GatewayManager(
+        "user",
+        PASSWORD,
+        {"uid": "192.168.1.2"},
+        discovery=FakeDiscovery({"uid": DiscoveryCandidate("uid", "10.0.0.9")}),
+        connection_factory=factory,
+    )
+    old = await manager.ensure("uid")
+    await manager.discover()
+
+    assert manager.gateway_hosts["uid"] == "10.0.0.9"
+    assert old.closed == 1
+    assert not connections[-1].allow_missing_uid
+    await manager.close()
+
+
+@pytest.mark.asyncio
+async def test_cloud_snapshot_removes_and_closes_missing_gateway() -> None:
+    connections: list[FakeConnection] = []
+
+    def factory(host: str) -> FakeConnection:
+        connection = FakeConnection(host)
+        connections.append(connection)
+        return connection
+
+    manager = GatewayManager(
+        "user",
+        PASSWORD,
+        {"old": "192.168.1.2", "keep": "192.168.1.3"},
+        connection_factory=factory,
+    )
+    old = await manager.ensure("old")
+
+    await manager.async_update_cloud_gateways({"keep": "192.168.1.3"})
+
+    assert manager.gateway_hosts == {"keep": "192.168.1.3"}
+    assert old.closed == 1
+    await manager.close()
+
+
+@pytest.mark.asyncio
+async def test_is_connected_tracks_managed_connection() -> None:
+    manager = GatewayManager(
+        "user",
+        PASSWORD,
+        {"uid": "192.168.1.2"},
+        connection_factory=FakeConnection,
+    )
+
+    assert not manager.is_connected("uid")
+    await manager.ensure("uid")
+    assert manager.is_connected("uid")
+    await manager.close()
+    assert not manager.is_connected("uid")
+
+
+@pytest.mark.asyncio
+async def test_push_callback_is_bound_to_gateway_uid() -> None:
+    pushes: list[tuple[str, object]] = []
+    manager = GatewayManager(
+        "user",
+        PASSWORD,
+        {"gateway-1": "192.168.1.2"},
+        connection_factory=FakeConnection,
+        push_callback=lambda uid, payload: pushes.append((uid, payload)),
+    )
+
+    connection = await manager.ensure("gateway-1")
+    assert isinstance(connection, FakeConnection)
+    assert connection.push_callback is not None
+    payload = {"cmd": 42, "deviceId": "device-1"}
+    connection.push_callback(payload)
+
+    assert pushes == [("gateway-1", payload)]
+    await manager.close()

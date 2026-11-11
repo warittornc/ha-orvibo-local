@@ -1,0 +1,12 @@
+{
+  "domain": "orvibo_lan",
+  "name": "Orvibo Local",
+  "codeowners": ["@warittornc"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/warittornc/ha-orvibo-local",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/warittornc/ha-orvibo-local/issues",
+  "requirements": ["aiohttp", "cryptography"],
+  "version": "0.1.0"
+}

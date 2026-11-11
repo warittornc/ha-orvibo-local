@@ -1,0 +1,563 @@
+[
+  {
+    "function": "light_on",
+    "args": [
+      "d",
+      "g",
+      502,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "properties": {
+        "onoff": {
+          "status": "on"
+        }
+      },
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_on",
+    "args": [
+      "d",
+      "g",
+      1,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "order": "on",
+      "value1": 0,
+      "value2": 255,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_off",
+    "args": [
+      "d",
+      "g",
+      503,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "properties": {
+        "onoff": {
+          "status": "off"
+        }
+      },
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_off",
+    "args": [
+      "d",
+      "g",
+      1,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "order": "off",
+      "value1": 1,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "power_only_light",
+    "args": [
+      "d",
+      "g",
+      true,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "debugInfo": "Android_ZhiJia365_34_5.1.5.302",
+      "groupId": "",
+      "order": "on",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_brightness",
+    "args": [
+      "d",
+      "g",
+      502,
+      128,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "properties": {
+        "brightness": {
+          "percent": 50
+        }
+      },
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_brightness",
+    "args": [
+      "d",
+      "g",
+      1,
+      128,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "on",
+      "value1": 0,
+      "value2": 128,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_brightness",
+    "args": [
+      "d",
+      "g",
+      102,
+      128,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "on",
+      "value1": 0,
+      "value2": 128,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_colortemp",
+    "args": [
+      "d",
+      "g",
+      503,
+      4000,
+      128,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "properties": {
+        "colorTemp": {
+          "value": 4000
+        }
+      },
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_colortemp",
+    "args": [
+      "d",
+      "g",
+      102,
+      4000,
+      128,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "fast color temperature",
+      "value1": 0,
+      "value2": 128,
+      "value3": 250,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_on_off",
+    "args": [
+      "d",
+      "g",
+      502,
+      true,
+      128,
+      4000,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "properties": {
+        "onoff": {
+          "status": "on"
+        },
+        "brightness": {
+          "percent": 50
+        }
+      },
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_on_off",
+    "args": [
+      "d",
+      "g",
+      102,
+      true,
+      128,
+      4000,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "properties": {
+        "onoff": {
+          "status": "on"
+        },
+        "brightness": {
+          "percent": 50
+        }
+      },
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "light_on_off",
+    "args": [
+      "d",
+      "g",
+      1,
+      false,
+      0,
+      null,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "order": "off",
+      "value1": 1,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "ac_off",
+    "args": [
+      "d",
+      "g",
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "delayTime": 0,
+      "qualityOfService": 1,
+      "defaultResponse": 1,
+      "propertyResponse": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "debugInfo": "Android_ZhiJia365_34_5.1.5.302",
+      "order": "off",
+      "value1": 1,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "ac_on_with_mode",
+    "args": [
+      "d",
+      "g",
+      3,
+      "u",
+      {
+        "value3": 2,
+        "value4": 157286400
+      }
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "delayTime": 0,
+      "qualityOfService": 1,
+      "defaultResponse": 1,
+      "propertyResponse": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "debugInfo": "Android_ZhiJia365_34_5.1.5.302",
+      "order": "on",
+      "value1": 0,
+      "value2": 3,
+      "value3": 2,
+      "value4": 157286400,
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "ac_set_temp",
+    "args": [
+      "d",
+      "g",
+      24,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "delayTime": 0,
+      "qualityOfService": 1,
+      "defaultResponse": 1,
+      "propertyResponse": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "debugInfo": "Android_ZhiJia365_34_5.1.5.302",
+      "order": "temperature setting",
+      "value1": 0,
+      "value2": 3,
+      "value3": 1,
+      "value4": 157286400,
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  },
+  {
+    "function": "ac_wind",
+    "args": [
+      "d",
+      "g",
+      2,
+      "u"
+    ],
+    "payload": {
+      "uid": "g",
+      "userName": "u",
+      "deviceId": "d",
+      "groupId": "",
+      "delayTime": 0,
+      "qualityOfService": 1,
+      "defaultResponse": 1,
+      "propertyResponse": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "debugInfo": "Android_ZhiJia365_34_5.1.5.302",
+      "order": "wind setting",
+      "value1": 0,
+      "value2": 3,
+      "value3": 2,
+      "value4": 163840000,
+      "source": "ZhiJia365"
+    },
+    "next_serial": 3
+  }
+]
