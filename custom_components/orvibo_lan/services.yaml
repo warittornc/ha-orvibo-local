@@ -1,0 +1,3 @@
+refresh_devices:
+  name: Refresh devices
+  description: Manually refresh the device list and state from the cloud

@@ -1,0 +1,443 @@
+[
+  {
+    "function": "curtain_position",
+    "args": [
+      "device",
+      "gateway",
+      -10,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "close",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_position",
+    "args": [
+      "device",
+      "gateway",
+      0,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "close",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_position",
+    "args": [
+      "device",
+      "gateway",
+      40,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "open",
+      "value1": 40,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_position",
+    "args": [
+      "device",
+      "gateway",
+      100,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "open",
+      "value1": 100,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_position",
+    "args": [
+      "device",
+      "gateway",
+      150,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "open",
+      "value1": 100,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_position",
+    "args": [
+      "device",
+      "gateway",
+      "stop",
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "stop",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      "open",
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "on",
+      "value1": 100,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      "close",
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "off",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      "stop",
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "stop",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      -10,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "off",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      40,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "off",
+      "value1": 40,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      50,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "on",
+      "value1": 50,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "curtain_control",
+    "args": [
+      "device",
+      "gateway",
+      150,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "order": "on",
+      "value1": 100,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "ventilation_control",
+    "args": [
+      "device",
+      "gateway",
+      0,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "set property",
+      "value1": 0,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "ventilation_control",
+    "args": [
+      "device",
+      "gateway",
+      50,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "set property",
+      "value1": 50,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  },
+  {
+    "function": "ventilation_control",
+    "args": [
+      "device",
+      "gateway",
+      100,
+      "user"
+    ],
+    "payload": {
+      "uid": "gateway",
+      "userName": "user",
+      "deviceId": "device",
+      "groupId": "",
+      "order": "set property",
+      "value1": 100,
+      "value2": 0,
+      "value3": 0,
+      "value4": 0,
+      "delayTime": 0,
+      "cmd": 15,
+      "serial": 1,
+      "clientType": 1,
+      "uniSerial": 2,
+      "serverRecord": false,
+      "ver": "5.1.5.302",
+      "source": "ZhiJia365"
+    }
+  }
+]

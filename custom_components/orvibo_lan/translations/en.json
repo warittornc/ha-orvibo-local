@@ -1,0 +1,101 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ORVIBO LAN",
+        "description": "Enter your Orvibo account credentials. Cloud discovery uses the global service.",
+        "data": {
+          "username": "Account",
+          "password": "Password"
+        }
+      },
+      "select_family": {
+        "title": "Select Family",
+        "description": "Please select a family to control",
+        "data": {
+          "family_id": "Family"
+        }
+      },
+      "devices": {
+        "title": "Select Devices",
+        "description": "Select devices to add (LAN child devices are controllable; property devices may be read-only; all selected by default)",
+        "data": {
+          "selected_device_ids": "Select Devices"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "Enter your new Orvibo password. The protocol digest is saved in secrets.yaml; the integration entry retains only its key name.",
+        "data": {
+          "password": "New password"
+        }
+      }
+    },
+    "error": {
+      "auth_failed": "Login failed, check your credentials",
+      "empty_username_or_password": "Account and password cannot be empty",
+      "cannot_connect": "Cannot connect to ORVIBO server",
+      "no_devices": "No controllable devices in this family",
+      "no_devices_selected": "Please select at least one device",
+      "gateway_auth_failed": "Cloud sign-in succeeded, but MixPad rejected the LAN login with these credentials.",
+      "secret_error": "Unable to read or safely update secrets.yaml. Check its format, permissions, and credential key."
+    },
+    "abort": {
+      "already_configured": "This account is already configured",
+      "auth_failed": "Login failed, check your credentials",
+      "no_devices": "No supported devices were found",
+      "gateway_auth_failed": "Cloud sign-in succeeded, but MixPad rejected the LAN login with these credentials.",
+      "secret_error": "Unable to read or safely update secrets.yaml. Check its format, permissions, and credential key.",
+      "secret_updated": "Credential secret reference updated."
+    }
+  },
+  "options": {
+    "step": {
+      "devices": {
+        "title": "Select Devices",
+        "description": "Select LAN or property-based read-only devices to add",
+        "data": {
+          "selected_device_ids": "Select Devices"
+        }
+      },
+      "init": {
+        "title": "ORVIBO LAN options",
+        "menu_options": {
+          "reauth": "Sign in again",
+          "devices": "Select devices",
+          "secrets": "Credential secret key"
+        }
+      },
+      "reauth": {
+        "title": "Sign in again",
+        "description": "Enter your new password for {username}. The digest is updated in secrets.yaml; your home and device selections are preserved. For a manually managed secret, update its value in the file first.",
+        "data": {
+          "password": "New password"
+        }
+      },
+      "secrets": {
+        "title": "Credential secret key",
+        "description": "Use an existing secrets.yaml key containing the 32-character protocol password digest. Only the key name is stored in the integration entry. Restart or reload after manually changing the file.",
+        "data": {
+          "password_hash_secret": "Secret key name"
+        }
+      }
+    },
+    "error": {
+      "auth_failed": "Login failed, check the new password",
+      "empty_username_or_password": "Password is required",
+      "cannot_connect": "Cannot connect to ORVIBO server",
+      "no_devices_selected": "Please select at least one device",
+      "no_devices": "No supported devices were found",
+      "gateway_auth_failed": "Cloud sign-in succeeded, but MixPad rejected the LAN login with these credentials.",
+      "secret_error": "Unable to read or safely update secrets.yaml. Check its format, permissions, and credential key."
+    },
+    "abort": {
+      "reauth_successful": "Signed in successfully; existing device and entity settings were preserved",
+      "no_devices": "No supported devices were found",
+      "gateway_auth_failed": "Cloud sign-in succeeded, but MixPad rejected the LAN login with these credentials.",
+      "secret_error": "Unable to read or safely update secrets.yaml. Check its format, permissions, and credential key.",
+      "secret_updated": "Credential secret reference updated."
+    }
+  }
+}
