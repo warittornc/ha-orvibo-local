@@ -13,7 +13,7 @@ uv run --locked mypy custom_components/orvibo_lan
 uv run --locked pytest --cov=custom_components.orvibo_lan --cov-report=term-missing
 ```
 
-CI runs the same three checks, plus HACS, hassfest, and actionlint validation on GitHub.
+CI runs the same three checks, plus hassfest and actionlint validation on GitHub.
 
 Change dependency constraints deliberately and commit the updated lockfile. The lockfile pins only the development environment; Home Assistant installs manifest requirements separately.
 

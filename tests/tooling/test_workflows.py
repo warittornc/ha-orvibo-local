@@ -44,9 +44,7 @@ class WorkflowTests(unittest.TestCase):
         assert isinstance(jobs, dict)
         self.assertTrue({"push", "pull_request"}.issubset(triggers))
         self.assertTrue(
-            {"quality", "tests", "package-contract", "hacs", "hassfest", "actionlint"}.issubset(
-                jobs
-            )
+            {"quality", "tests", "package-contract", "hassfest", "actionlint"}.issubset(jobs)
         )
         self.assertFalse((WORKFLOWS / "hacs.yml").exists())
 
@@ -73,7 +71,6 @@ class WorkflowTests(unittest.TestCase):
                 self.assertTrue(any(step.get("name") == "Install uv" for step in steps))
 
         references = action_references(workflow)
-        self.assertTrue(any(reference.startswith("hacs/action@") for reference in references))
         self.assertTrue(
             any(
                 reference.startswith("home-assistant/actions/hassfest@") for reference in references
